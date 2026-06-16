@@ -21,7 +21,7 @@ MonoBehaviour:
   isLeftHanded: 0
   isZUp: 0
   stitchPatches: 0
-  treeProcess: 0
+  treeProcess: 1
   treeLevel: 1
   mergeBy: 0
   mergeType: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
   lodsMode: 1
   qualities:
     _lods:
-    - quality: 0
+    - quality: 2
       threshold: 0.7
     - quality: 2
       threshold: 0.35
