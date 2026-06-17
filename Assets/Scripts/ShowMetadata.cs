@@ -2,8 +2,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;   // Added for New Input System
-using UnityEngine.EventSystems;  // Added for UI protection
+using UnityEngine.InputSystem;   
+using UnityEngine.EventSystems;  
+// Added Enhanced Touch
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class ShowMetadata : MonoBehaviour
 {
@@ -21,6 +24,10 @@ public class ShowMetadata : MonoBehaviour
     private GameObject lastSelectedObject; 
     private Camera mainCamera;
 
+    // Enable touch tracking
+    private void OnEnable() { EnhancedTouchSupport.Enable(); }
+    private void OnDisable() { EnhancedTouchSupport.Disable(); }
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -28,30 +35,54 @@ public class ShowMetadata : MonoBehaviour
         if (entryPrefab != null) 
             entryPrefab.SetActive(false);
             
-        ClearUI(); // Ensure the UI is clean on start
+        ClearUI(); 
     }
 
     void Update()
     {
-        // Safety checks
-        if (Mouse.current == null || mainCamera == null) return;
+        if (mainCamera == null) return;
 
-        // Check if the Left Mouse Button was clicked this exact frame
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        bool isClicking = false;
+        Vector2 clickPosition = Vector2.zero;
+        bool isOverUI = false;
+
+        // 1. Check for Touch (Mobile)
+        if (Touch.activeTouches.Count > 0)
         {
-            // CRITICAL: Prevent the raycast if the user is clicking on a UI element (like the scrollbar)
+            Touch touch = Touch.activeTouches[0];
+            // Only trigger on the exact frame the finger touches the screen
+            if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+            {
+                isClicking = true;
+                clickPosition = touch.screenPosition;
+                
+                // Touch-specific UI check using the finger's unique ID
+                if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touch.touchId))
+                    isOverUI = true;
+            }
+        }
+        // 2. Check for Mouse (PC)
+        else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            isClicking = true;
+            clickPosition = Mouse.current.position.ReadValue();
+            
+            // Mouse-specific UI check
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-                return;
+                isOverUI = true;
+        }
 
-            Vector2 mousePos = Mouse.current.position.ReadValue();
-            Ray ray = mainCamera.ScreenPointToRay(mousePos);
+        // 3. Process the Raycast if a valid click/tap happened
+        if (isClicking)
+        {
+            if (isOverUI) return; // Prevent raycast if touching the scrollbar or text
 
-            // Shoot the raycast to see what we clicked
+            Ray ray = mainCamera.ScreenPointToRay(clickPosition);
+
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 GameObject clickedObject = hit.collider.gameObject;
 
-                // Only update everything if we clicked a DIFFERENT object
                 if (clickedObject != lastSelectedObject)
                 {
                     lastSelectedObject = clickedObject;
@@ -60,7 +91,6 @@ public class ShowMetadata : MonoBehaviour
             }
             else
             {
-                // We clicked on empty space. Clear the selection and the UI.
                 if (lastSelectedObject != null)
                 {
                     lastSelectedObject = null;
@@ -86,7 +116,6 @@ public class ShowMetadata : MonoBehaviour
         ycor.text = "Y: " + Mathf.Round(obj.transform.position.y);
         zcor.text = "Z: " + Mathf.Round(obj.transform.position.z);
 
-        // Check for your specific PiXYZ Metadata component
         if (obj.TryGetComponent(out Pixyz.ImportSDK.Metadata pixyzMetadata))
         {
             foreach (var property in pixyzMetadata.getProperties())
@@ -110,7 +139,6 @@ public class ShowMetadata : MonoBehaviour
         entries.Clear();
     }
 
-    // Helper method to reset the UI text when nothing is selected
     private void ClearUI()
     {
         CleanEntries();

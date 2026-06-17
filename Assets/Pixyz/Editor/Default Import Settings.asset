@@ -21,7 +21,7 @@ MonoBehaviour:
   isLeftHanded: 0
   isZUp: 0
   stitchPatches: 0
-  treeProcess: 1
+  treeProcess: 0
   treeLevel: 1
   mergeBy: 0
   mergeType: 1

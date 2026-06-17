@@ -6,75 +6,75 @@ namespace Pixyz.Toolbox.Editor {
 
 		[MenuItem("Pixyz/Toolbox/Mesh/Decimate", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Mesh/Decimate", priority = -20)]
-		public static void A0754c809_6b8c_4f84_a4bd_ee9abc81f788() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.DecimateAction()); }
+		public static void A50f75e4b_b28b_44f1_9a0a_d0c0be942ae1() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.DecimateAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Colliders/Create Collider", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Colliders/Create Collider", priority = -19)]
-		public static void Af98eb0be_59be_484e_88aa_5d45604fce13() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateColliderAction()); }
+		public static void A4acce7c5_dde5_4141_bfb9_2cc6565b53df() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateColliderAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Colliders/Remove Colliders", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Colliders/Remove Colliders", priority = -18)]
-		public static void Ac1d83cf2_44f0_4202_896b_09a5a98f7313() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RemoveCollidersAction()); }
+		public static void A454f2393_1cc4_4a6c_bbed_ea5396bab369() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RemoveCollidersAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Mesh/Repair", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Mesh/Repair", priority = -17)]
-		public static void A63b96f57_7432_4b17_a26b_52177ea9284c() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RepairMeshAction()); }
+		public static void A3159a536_f30c_4cb3_9576_1e69e0ee68b5() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RepairMeshAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Mesh/Remove Z-Fighting", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Mesh/Remove Z-Fighting", priority = -15)]
-		public static void A8447525f_69d4_48e3_bb72_47acb683665c() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RemoveZFightingAction()); }
+		public static void Aa8c06db5_3e30_470b_af13_5d2f5d5079d3() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RemoveZFightingAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Mesh/Remove Hidden", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Mesh/Remove Hidden", priority = -14)]
-		public static void A104447cf_3fe8_456a_be79_77168317425f() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RemoveHiddenAction()); }
+		public static void Ad67b1960_dbdf_4aa6_9f6f_e595acb74d17() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RemoveHiddenAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Remeshing/Retopologize", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Remeshing/Retopologize", priority = -13)]
-		public static void A516d0a82_3e8e_427e_b96d_f08a07aa2f04() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RetopologizeAction()); }
+		public static void Aa6cb69b9_47b3_4787_aea4_8c4a2ce0b944() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.RetopologizeAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Remeshing/Create Impostor", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Remeshing/Create Impostor", priority = -12)]
-		public static void A87e72572_d012_44e6_a67c_a41567fa6ff9() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.BakeImpostor()); }
+		public static void A3655162d_6523_42e6_b4aa_8941331a7820() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.BakeImpostor()); }
 
 		[MenuItem("Pixyz/Toolbox/Remeshing/Create Billboard", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Remeshing/Create Billboard", priority = -12)]
-		public static void Aa5b9b9fe_10d3_46d6_9d49_d33bc5e43808() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.GenerateBillboardAction()); }
+		public static void Afb673eba_35f9_4277_8183_8ccc3c23f3bb() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.GenerateBillboardAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Hierarchy/Merge", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Hierarchy/Merge", priority = -11)]
-		public static void Accc5b208_0662_4043_8ce1_84fba565abb6() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.Merge()); }
+		public static void A4753b9a0_6da1_44a7_b8e5_0f9170cb467d() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.Merge()); }
 
 		[MenuItem("Pixyz/Toolbox/Hierarchy/Combine", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Hierarchy/Combine", priority = -10)]
-		public static void A964324c9_6664_4a56_8cfc_c6b5bef0358f() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CombineAction()); }
+		public static void A3f0cd2e0_995f_477b_b39e_e4b7fdc6e369() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CombineAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Hierarchy/Replace by...", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Hierarchy/Replace by...", priority = -9)]
-		public static void A0a913bfa_b422_44ba_bd31_1ed200d49481() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.ReplaceBy()); }
+		public static void Aebbd97b9_91d5_4a77_af7d_1d109ccb92e9() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.ReplaceBy()); }
 
 		[MenuItem("Pixyz/Toolbox/Hierarchy/Explode", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Hierarchy/Explode", priority = -8)]
-		public static void A792a561d_45ed_4624_aade_8cb86bb396f2() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.ExplodeSubmeshesAction()); }
+		public static void A33ecc4e0_9e19_4b7f_80e4_a4d22311f507() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.ExplodeSubmeshesAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Pivot/Move Pivot", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Pivot/Move Pivot", priority = -7)]
-		public static void A361f3bac_2779_4287_b70c_32bce4e4a1cb() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.MovePivotAction()); }
+		public static void A3620787a_99a2_41dd_bdaf_3f2f2c35f2ed() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.MovePivotAction()); }
 
 		[MenuItem("Pixyz/Toolbox/Normals/Flip Normals", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Normals/Flip Normals", priority = -6)]
-		public static void A9398a7d2_f56c_4e0b_837f_521396fa8ad0() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.FlipNormals()); }
+		public static void A2d800dc3_d91c_4181_af94_a13bb2b0155b() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.FlipNormals()); }
 
 		[MenuItem("Pixyz/Toolbox/Normals/Create Normals", priority = 22)]
 		[MenuItem("GameObject/Pixyz/Normals/Create Normals", priority = -5)]
-		public static void A90507895_a29a_4ef1_9001_17c33740848e() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateNormals()); }
+		public static void Adb0d006b_b0ca_44f6_88a8_fad6717ed70f() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateNormals()); }
 
 		[MenuItem("Pixyz/Toolbox/UVs/Create UVs", priority = 22)]
 		[MenuItem("GameObject/Pixyz/UVs/Create UVs", priority = -4)]
-		public static void A3921a885_c203_4bd0_82fc_e96d4d4781b1() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateUVs()); }
+		public static void Aba1bd3e8_6579_4043_9d25_f7988e768da8() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateUVs()); }
 
 		[MenuItem("Pixyz/Toolbox/UVs/Create UVs for Lightmaps", priority = 22)]
 		[MenuItem("GameObject/Pixyz/UVs/Create UVs for Lightmaps", priority = -3)]
-		public static void A2e4c9a2f_259b_4edb_bd7d_81fb7e024b20() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateLightmapUVs()); }
+		public static void A03876d45_4342_482f_b442_1531f9c571c0() { Toolbox.RunToolboxAction(new Pixyz.Toolbox.Editor.CreateLightmapUVs()); }
 
 	}
 }
